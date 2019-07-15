@@ -67,6 +67,7 @@ public class AppTest extends TestCase {
 		//
 		assertTrue(auction.getPotentialBuyers().size() == 5);
 		System.out.println(auction.dispalyUsers());
+		
 		// Buyer A
 		Bid bid110 = new Bid(110D);
 		A.place(bid110);
@@ -76,10 +77,12 @@ public class AppTest extends TestCase {
 		A.place(bid130);
 		auction.acquire();
 		// Buyer B
+		
 		// Buyer C
 		Bid bid125 = new Bid(125D);
 		C.place(bid125);
 		auction.acquire();
+		
 		// Buyer D
 		Bid bid105 = new Bid(105D);
 		D.place(bid105);
@@ -92,6 +95,7 @@ public class AppTest extends TestCase {
 		Bid bid90 = new Bid(90D);
 		D.place(bid90);
 		auction.acquire();
+		
 		// Buyer E
 		Bid bid132 = new Bid(132D);
 		E.place(bid132);
