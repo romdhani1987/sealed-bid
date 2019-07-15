@@ -9,6 +9,8 @@ import junit.framework.TestSuite;
 
 /**
  * Unit test for simple App.
+ * 
+ * @author Aromdhani
  */
 public class AppTest extends TestCase {
 	/**
@@ -48,20 +50,24 @@ public class AppTest extends TestCase {
 		Buyer E = new Buyer("E");
 		assertTrue(E != null);
 		System.out.println(E.toString() + " is a potential buyer!");
-		// The object to sale
+
+		// Set the object to sale
 		ObjectToSale objectToSale = new ObjectToSale(100D);
 		assertTrue(objectToSale != null);
 		System.out.println(objectToSale.toString());
+
 		// Auction
 		Auction auction = new Auction(objectToSale);
-		// Set the potential buyer to the auction
+		// Set the potential buyers of an auction
 		auction.addBuyer(A);
 		auction.addBuyer(B);
 		auction.addBuyer(C);
 		auction.addBuyer(C);
 		auction.addBuyer(E);
+		//
+		assertTrue(auction.getPotentialBuyers().size() == 5);
 		System.out.println(auction.dispalyUsers());
-		// A
+		// Buyer A
 		Bid bid110 = new Bid(110D);
 		A.place(bid110);
 		auction.acquire();
@@ -69,12 +75,12 @@ public class AppTest extends TestCase {
 		Bid bid130 = new Bid(130D);
 		A.place(bid130);
 		auction.acquire();
-		// B
-		// C
+		// Buyer B
+		// Buyer C
 		Bid bid125 = new Bid(125D);
 		C.place(bid125);
 		auction.acquire();
-		// D
+		// Buyer D
 		Bid bid105 = new Bid(105D);
 		D.place(bid105);
 		auction.acquire();
@@ -86,7 +92,7 @@ public class AppTest extends TestCase {
 		Bid bid90 = new Bid(90D);
 		D.place(bid90);
 		auction.acquire();
-		// E
+		// Buyer E
 		Bid bid132 = new Bid(132D);
 		E.place(bid132);
 		auction.acquire();
