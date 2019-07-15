@@ -1,5 +1,6 @@
 package fr.romdhani.aymen.sealed.bid;
 
+import fr.romdhani.aymen.sealed.bid.model.Bid;
 import fr.romdhani.aymen.sealed.bid.model.Buyer;
 import fr.romdhani.aymen.sealed.bid.model.ObjectToSale;
 import junit.framework.Test;
@@ -59,7 +60,45 @@ public class AppTest extends TestCase {
 		auction.addBuyer(C);
 		auction.addBuyer(C);
 		auction.addBuyer(E);
-		System.out.println(auction.toString());
-		
+		System.out.println(auction.dispalyUsers());
+		// A
+		Bid bid110 = new Bid(110D);
+		A.place(bid110);
+		auction.acquire();
+
+		Bid bid130 = new Bid(130D);
+		A.place(bid130);
+		auction.acquire();
+		// B
+		// C
+		Bid bid125 = new Bid(125D);
+		C.place(bid125);
+		auction.acquire();
+		// D
+		Bid bid105 = new Bid(105D);
+		D.place(bid105);
+		auction.acquire();
+
+		Bid bid115 = new Bid(115D);
+		D.place(bid115);
+		auction.acquire();
+
+		Bid bid90 = new Bid(90D);
+		D.place(bid90);
+		auction.acquire();
+		// E
+		Bid bid132 = new Bid(132D);
+		E.place(bid132);
+		auction.acquire();
+
+		Bid bid135 = new Bid(135D);
+		E.place(bid135);
+		auction.acquire();
+
+		Bid bid140 = new Bid(140D);
+		D.place(bid140);
+		auction.acquire();
+
+		System.out.println(auction.dispalyResult());
 	}
 }

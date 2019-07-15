@@ -2,7 +2,6 @@ package fr.romdhani.aymen.sealed.bid.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 
 /**
  * This class represents a buyer.
