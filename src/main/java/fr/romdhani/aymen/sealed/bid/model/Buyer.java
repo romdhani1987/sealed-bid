@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-import fr.romdhani.aymen.sealed.bid.model.Bid;
-
 /**
  * This class represents a buyer.
  * 
@@ -15,7 +13,7 @@ import fr.romdhani.aymen.sealed.bid.model.Bid;
 public final class Buyer {
 	private Long id;
 	private String name;
-	private Double maxPlacedValue;
+	private Double maxPlacedValue=0D;
 	private List<Bid> placedBids = new ArrayList<Bid>();
 	private List<ObjectToSale> purchasedObjects = new ArrayList<ObjectToSale>();
 
@@ -56,7 +54,8 @@ public final class Buyer {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public final void setId(Long id) {
 		this.id = id;
@@ -70,7 +69,8 @@ public final class Buyer {
 	}
 
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
 	public final void setName(String name) {
 		this.name = name;
@@ -84,7 +84,8 @@ public final class Buyer {
 	}
 
 	/**
-	 * @param maxPlacedValue the maxPlacedValue to set
+	 * @param maxPlacedValue
+	 *            the maxPlacedValue to set
 	 */
 	public final void setMaxPlacedValue(Double maxPlacedValue) {
 		this.maxPlacedValue = maxPlacedValue;
@@ -98,7 +99,8 @@ public final class Buyer {
 	}
 
 	/**
-	 * @param placedBids the placedBids to set
+	 * @param placedBids
+	 *            the placedBids to set
 	 */
 	public final void setPlacedBids(List<Bid> placedBids) {
 		this.placedBids = placedBids;
@@ -112,7 +114,8 @@ public final class Buyer {
 	}
 
 	/**
-	 * @param purchasedObjects the purchasedObjects to set
+	 * @param purchasedObjects
+	 *            the purchasedObjects to set
 	 */
 	public final void setPurchasedObjects(List<ObjectToSale> purchasedObjects) {
 		this.purchasedObjects = purchasedObjects;
@@ -131,7 +134,7 @@ public final class Buyer {
 	 * Fetch the max value of bids placed by this user.
 	 * 
 	 */
-	public void getMaxPlacedBid() {
+	private void computeMaxPlacedBid() {
 		for (Bid bid : placedBids) {
 			if (bid.getValue() > maxPlacedValue) {
 				maxPlacedValue = bid.getValue();
@@ -145,8 +148,9 @@ public final class Buyer {
 	 * @param bidConsumer
 	 *            consumer
 	 */
-	public void place(Consumer<Bid> bidConsumer) {
-		getMaxPlacedBid();
+	public void place(Bid bid) {
+		placedBids.add(bid);
+		computeMaxPlacedBid();
 	}
 
 	/*
