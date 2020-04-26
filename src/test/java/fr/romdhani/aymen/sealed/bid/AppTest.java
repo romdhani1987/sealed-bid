@@ -111,4 +111,25 @@ public class AppTest extends TestCase {
 
 		System.out.println(auction.dispalyResult());
 	}
+	/**
+	 * Sealed-bid test
+	 */
+	public void testUsers() {
+		// The potential buyers
+		Buyer A = new Buyer("A");
+		assertTrue(A != null);
+		System.out.println(A.toString() + " is a potential buyer!");
+		Buyer B = new Buyer("B");
+		assertTrue(B != null);
+		System.out.println(B.toString() + " is a potential buyer!");
+		Buyer C = new Buyer("C");
+		assertTrue(C != null);
+		System.out.println(C.toString() + " is a potential buyer!");
+		Buyer D = new Buyer("D");
+		assertTrue(D != null);
+		System.out.println(D.toString() + " is a potential buyer!");
+		Buyer E = new Buyer("E");
+		assertTrue(E != null);
+		System.out.println(E.toString() + " is a potential buyer!");
+	}
 }
