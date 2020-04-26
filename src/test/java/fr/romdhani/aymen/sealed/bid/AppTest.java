@@ -132,4 +132,10 @@ public class AppTest extends TestCase {
 		assertTrue(E != null);
 		System.out.println(E.toString() + " is a potential buyer!");
 	}
+	public void testFirstUser() {
+		// The potential buyers
+		Buyer A = new Buyer("A");
+		assertTrue(A != null);
+		System.out.println(A.toString() + "first buyer is created!");
+	}
 }
